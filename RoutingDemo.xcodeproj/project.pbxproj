@@ -43,6 +43,7 @@
 		8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */; };
 		8ECA1672277202690051597C /* Nivelir.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; };
 		8ECA1673277202690051597C /* Nivelir.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8ECA1675277202B30051597C /* MainSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1674277202B30051597C /* MainSceneRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +98,7 @@
 		8ECA16572770CF190051597C /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthorizationProvider.swift; sourceTree = "<group>"; };
 		8ECA1671277202690051597C /* Nivelir.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nivelir.xcframework; path = Carthage/Build/Nivelir.xcframework; sourceTree = "<group>"; };
+		8ECA1674277202B30051597C /* MainSceneRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSceneRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBAABB727707A7C003E4B08 /* MainSceneDelegate.swift */,
+				8ECA1674277202B30051597C /* MainSceneRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				8ECA164A2770C17E0051597C /* AuthorizationPhoneNumberViewController.swift in Sources */,
 				8EBAAB8C277079F2003E4B08 /* UITableView+Reusable.swift in Sources */,
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
+				8ECA1675277202B30051597C /* MainSceneRouter.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

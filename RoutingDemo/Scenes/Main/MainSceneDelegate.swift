@@ -1,8 +1,10 @@
 import UIKit
+import Nivelir
 
 class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var router: MainSceneRouter?
 
     func scene(
         _ scene: UIScene,
@@ -14,10 +16,14 @@ class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = HomeScreen().build()
+        let navigator = ScreenNavigator(window: window)
+
+        let router = MainSceneRouter(navigator: navigator)
 
         self.window = window
+        self.router = router
 
+        router.showRootScreen()
         window.makeKeyAndVisible()
     }
 }

@@ -1,8 +1,9 @@
 import UIKit
+import Nivelir
 
-struct HomeScreen {
+struct HomeScreen: Screen {
 
-    func build() -> UITabBarController {
+    func build(navigator: ScreenNavigator) -> UITabBarController {
         let view = HomeTabBarController()
 
         let profileViewController = ProfileScreen().build()
