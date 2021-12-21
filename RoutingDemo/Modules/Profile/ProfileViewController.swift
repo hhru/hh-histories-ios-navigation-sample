@@ -1,13 +1,20 @@
 import UIKit
 import Photos
+import Nivelir
 
 final class ProfileViewController: UIViewController {
+
+    let screenKey: ScreenKey
+    let screenNavigator: ScreenNavigator
 
     private var profileView: ProfileView {
         view as! ProfileView
     }
 
-    init() {
+    init(screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
+        self.screenKey = screenKey
+        self.screenNavigator = screenNavigator
+
         super.init(nibName: nil, bundle: nil)
     }
 

@@ -1,8 +1,13 @@
 import UIKit
+import Nivelir
 
-struct RoomListScreen {
+struct RoomListScreen: Screen {
 
-    func build() -> UIViewController {
-        RoomListViewController(authorizationProvider: DefaultAuthorizationProvider.shared)
+    func build(navigator: ScreenNavigator) -> UIViewController {
+        RoomListViewController(
+            authorizationProvider: DefaultAuthorizationProvider.shared,
+            screenKey: key,
+            screenNavigator: navigator
+        )
     }
 }

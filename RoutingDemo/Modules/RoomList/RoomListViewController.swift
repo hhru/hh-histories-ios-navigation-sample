@@ -1,13 +1,18 @@
 import UIKit
+import Nivelir
 
 final class RoomListViewController: UITableViewController {
 
     private let authorizationProvider: AuthorizationProvider
+    private let screenKey: ScreenKey
+    private let screenNavigator: ScreenNavigator
 
     private var chatCount = Int.random(in: 3...10)
 
-    init(authorizationProvider: AuthorizationProvider) {
+    init(authorizationProvider: AuthorizationProvider, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
         self.authorizationProvider = authorizationProvider
+        self.screenKey = screenKey
+        self.screenNavigator = screenNavigator
 
         super.init(nibName: nil, bundle: nil)
 

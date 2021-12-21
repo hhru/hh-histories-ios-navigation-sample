@@ -1,8 +1,12 @@
 import UIKit
+import Nivelir
 
-struct ProfileScreen {
+struct ProfileScreen: Screen {
 
-    func build() -> UIViewController {
-        ProfileViewController()
+    func build(navigator: ScreenNavigator) -> UIViewController {
+        ProfileViewController(
+            screenKey: key,
+            screenNavigator: navigator
+        )
     }
 }
