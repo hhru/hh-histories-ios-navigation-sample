@@ -44,6 +44,8 @@
 		8ECA1672277202690051597C /* Nivelir.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; };
 		8ECA1673277202690051597C /* Nivelir.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8ECA1675277202B30051597C /* MainSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1674277202B30051597C /* MainSceneRouter.swift */; };
+		8ECA1678277207880051597C /* ScreenAuthorizedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1677277207880051597C /* ScreenAuthorizedAction.swift */; };
+		8ECA167B27720B960051597C /* AuthorizationCancelledError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA167A27720B960051597C /* AuthorizationCancelledError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +101,8 @@
 		8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthorizationProvider.swift; sourceTree = "<group>"; };
 		8ECA1671277202690051597C /* Nivelir.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nivelir.xcframework; path = Carthage/Build/Nivelir.xcframework; sourceTree = "<group>"; };
 		8ECA1674277202B30051597C /* MainSceneRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSceneRouter.swift; sourceTree = "<group>"; };
+		8ECA1677277207880051597C /* ScreenAuthorizedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAuthorizedAction.swift; sourceTree = "<group>"; };
+		8ECA167A27720B960051597C /* AuthorizationCancelledError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCancelledError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		8EBAAB6E277079D1003E4B08 /* RoutingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8ECA16762772072F0051597C /* Actions */,
 				8EBAAB83277079F2003E4B08 /* Helpers */,
 				8EBAAB8D27707A05003E4B08 /* Modules */,
 				8ECA16562770CEF90051597C /* Provider */,
@@ -309,6 +314,23 @@
 			path = AuthorizationProvider;
 			sourceTree = "<group>";
 		};
+		8ECA16762772072F0051597C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				8ECA167927720B410051597C /* ScreenAuthorizedAction */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		8ECA167927720B410051597C /* ScreenAuthorizedAction */ = {
+			isa = PBXGroup;
+			children = (
+				8ECA1677277207880051597C /* ScreenAuthorizedAction.swift */,
+				8ECA167A27720B960051597C /* AuthorizationCancelledError.swift */,
+			);
+			path = ScreenAuthorizedAction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +406,7 @@
 				8EBAABA127707A05003E4B08 /* ChatListCell.swift in Sources */,
 				8EBAAB8B277079F2003E4B08 /* Reusable.swift in Sources */,
 				8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */,
+				8ECA167B27720B960051597C /* AuthorizationCancelledError.swift in Sources */,
 				8EBAAB9E27707A05003E4B08 /* HomeTabBarItem.swift in Sources */,
 				8EBAABA027707A05003E4B08 /* HomeTabBarController.swift in Sources */,
 				8ECA163D277096CA0051597C /* ProfileScreen.swift in Sources */,
@@ -396,6 +419,7 @@
 				8EBAABA227707A05003E4B08 /* ChatListViewController.swift in Sources */,
 				8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */,
 				8ECA16422770BA7A0051597C /* RoomListCell.swift in Sources */,
+				8ECA1678277207880051597C /* ScreenAuthorizedAction.swift in Sources */,
 				8EBAABA827707A06003E4B08 /* ProfileView.swift in Sources */,
 				8EBAAB89277079F2003E4B08 /* Images.swift in Sources */,
 				8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */,

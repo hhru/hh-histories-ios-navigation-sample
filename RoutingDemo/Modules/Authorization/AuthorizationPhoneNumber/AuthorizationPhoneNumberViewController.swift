@@ -1,17 +1,24 @@
 import UIKit
+import Nivelir
 
 final class AuthorizationPhoneNumberViewController: UIViewController {
 
     private let authorizationCompletion: AuthorizationCompletion
     private let authorizationProvider: AuthorizationProvider
 
-    private var authorizationPhoneNumberView: AuthorizationPhoneNumberView {
-        view as! AuthorizationPhoneNumberView
-    }
+    private let screenKey: ScreenKey
+    private let screenNavigator: ScreenNavigator
 
-    init(authorizationCompletion: @escaping AuthorizationCompletion, authorizationProvider: AuthorizationProvider) {
+    init(
+        authorizationCompletion: @escaping AuthorizationCompletion,
+        authorizationProvider: AuthorizationProvider,
+        screenKey: ScreenKey,
+        screenNavigator: ScreenNavigator
+    ) {
         self.authorizationCompletion = authorizationCompletion
         self.authorizationProvider = authorizationProvider
+        self.screenKey = screenKey
+        self.screenNavigator = screenNavigator
 
         super.init(nibName: nil, bundle: nil)
 

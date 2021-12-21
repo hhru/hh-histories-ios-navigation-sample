@@ -1,13 +1,16 @@
 import UIKit
+import Nivelir
 
-struct AuthorizationPhoneNumberScreen {
+struct AuthorizationPhoneNumberScreen: Screen {
 
     let authorizationCompletion: AuthorizationCompletion
 
-    func build() -> UIViewController {
+    func build(navigator: ScreenNavigator) -> UIViewController {
         AuthorizationPhoneNumberViewController(
             authorizationCompletion: authorizationCompletion,
-            authorizationProvider: DefaultAuthorizationProvider.shared
+            authorizationProvider: DefaultAuthorizationProvider.shared,
+            screenKey: key,
+            screenNavigator: navigator
         )
     }
 }

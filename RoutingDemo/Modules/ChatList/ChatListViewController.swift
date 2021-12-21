@@ -1,10 +1,17 @@
 import UIKit
+import Nivelir
 
 final class ChatListViewController: UITableViewController {
 
+    private let screenKey: ScreenKey
+    private let screenNavigator: ScreenNavigator
+
     private var chatCount = Int.random(in: 3...10)
 
-    init(title: String) {
+    init(title: String, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
+        self.screenKey = screenKey
+        self.screenNavigator = screenNavigator
+
         super.init(nibName: nil, bundle: nil)
 
         self.title = title

@@ -25,23 +25,10 @@ final class RoomListViewController: UITableViewController {
     }
 
     private func showChatList(index: Int) {
-        let chatViewController = ChatListScreen(title: "Chats – Room #\(index)").build()
-        let chatNavigationController = UINavigationController(rootViewController: chatViewController)
-
-        if authorizationProvider.isAuthorized {
-            present(chatNavigationController, animated: true)
-        } else {
-            let authorizationViewController = AuthorizationPhoneNumberScreen(authorizationCompletion: { result in
-                if result.isAuthorized {
-                    self.present(chatNavigationController, animated: true)
-                }
-            }).build()
-
-            let authorizationNavigationController = UINavigationController(
-                rootViewController: authorizationViewController
-            )
-
-            present(authorizationNavigationController, animated: true)
+        screenNavigator.navigate(from: self) { route in
+            route
+                .authorized(with: authorizationProvider)
+                .present(ChatListScreen(title: "Chats – Room #\(index)").withStackContainer())
         }
     }
 

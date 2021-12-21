@@ -1,10 +1,15 @@
 import UIKit
+import Nivelir
 
-struct ChatListScreen {
+struct ChatListScreen: Screen {
 
     let title: String
 
-    func build() -> UIViewController {
-        ChatListViewController(title: title)
+    func build(navigator: ScreenNavigator) -> UIViewController {
+        ChatListViewController(
+            title: title,
+            screenKey: key,
+            screenNavigator: navigator
+        )
     }
 }
