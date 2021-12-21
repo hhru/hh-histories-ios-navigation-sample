@@ -1,17 +1,22 @@
 import UIKit
+import Nivelir
 
-final class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController, ScreenKeyedContainer {
 
-    let chatID: Int
+    private let chatID: Int
 
-    init(chatID: Int) {
+    let screenKey: ScreenKey
+    let screenNavigator: ScreenNavigator
+
+    init(chatID: Int, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
         self.chatID = chatID
+
+        self.screenKey = screenKey
+        self.screenNavigator = screenNavigator
 
         super.init(nibName: nil, bundle: nil)
 
-        #if os(iOS)
         hidesBottomBarWhenPushed = true
-        #endif
     }
 
     @available(*, unavailable)

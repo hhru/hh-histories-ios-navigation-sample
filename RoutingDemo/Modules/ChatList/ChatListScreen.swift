@@ -3,11 +3,11 @@ import Nivelir
 
 struct ChatListScreen: Screen {
 
-    let title: String
+    let roomID: Int
 
     func build(navigator: ScreenNavigator) -> UIViewController {
         ChatListViewController(
-            title: title,
+            roomID: roomID,
             screenKey: key,
             screenNavigator: navigator
         )

@@ -1,13 +1,14 @@
 import UIKit
 import Nivelir
 
-final class RoomListViewController: UITableViewController {
+final class RoomListViewController: UITableViewController, ScreenKeyedContainer {
 
     private let authorizationProvider: AuthorizationProvider
-    private let screenKey: ScreenKey
-    private let screenNavigator: ScreenNavigator
 
     private var chatCount = Int.random(in: 3...10)
+
+    let screenKey: ScreenKey
+    let screenNavigator: ScreenNavigator
 
     init(authorizationProvider: AuthorizationProvider, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
         self.authorizationProvider = authorizationProvider
@@ -28,7 +29,7 @@ final class RoomListViewController: UITableViewController {
         screenNavigator.navigate(from: self) { route in
             route
                 .authorized(with: authorizationProvider)
-                .present(ChatListScreen(title: "Chats – Room #\(index)").withStackContainer())
+                .present(ChatListScreen(roomID: index).withStackContainer())
         }
     }
 

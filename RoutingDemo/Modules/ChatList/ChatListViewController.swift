@@ -1,20 +1,20 @@
 import UIKit
 import Nivelir
 
-final class ChatListViewController: UITableViewController {
-
-    private let screenKey: ScreenKey
-    private let screenNavigator: ScreenNavigator
+final class ChatListViewController: UITableViewController, ScreenKeyedContainer {
 
     private var chatCount = Int.random(in: 3...10)
 
-    init(title: String, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
+    let screenKey: ScreenKey
+    let screenNavigator: ScreenNavigator
+
+    init(roomID: Int, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
         self.screenKey = screenKey
         self.screenNavigator = screenNavigator
 
         super.init(nibName: nil, bundle: nil)
 
-        self.title = title
+        self.title = "Chats – Room #\(roomID)"
     }
 
     @available(*, unavailable)
@@ -23,7 +23,9 @@ final class ChatListViewController: UITableViewController {
     }
 
     private func showChat(id: Int) {
-        navigationController?.pushViewController(ChatScreen(chatID: id).build(), animated: true)
+        screenNavigator.navigate(from: stack) { route in
+            route.push(ChatScreen(chatID: id))
+        }
     }
 
     override func viewDidLoad() {
