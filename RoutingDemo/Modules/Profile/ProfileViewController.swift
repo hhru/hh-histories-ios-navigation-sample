@@ -1,8 +1,7 @@
 import UIKit
-import Photos
 import Nivelir
 
-final class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController, ScreenKeyedContainer {
 
     let screenKey: ScreenKey
     let screenNavigator: ScreenNavigator
@@ -23,151 +22,83 @@ final class ProfileViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func requestPhotosAccess(completion: @escaping (_ authorized: Bool) -> Void) {
-        let handler: (PHAuthorizationStatus) -> Void = { _ in
-            DispatchQueue.main.async {
-                self.requestPhotosAccessIfNeeded(completion: completion)
-            }
-        }
-
-        if #available(iOS 14, *) {
-            PHPhotoLibrary.requestAuthorization(for: .readWrite, handler: handler)
-        } else {
-            PHPhotoLibrary.requestAuthorization(handler)
-        }
-    }
-
-    private func requestPhotosAccessIfNeeded(completion: @escaping (_ authorized: Bool) -> Void) {
-        let authorizationStatus: PHAuthorizationStatus
-
-        if #available(iOS 14, *) {
-            authorizationStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
-        } else {
-            authorizationStatus = PHPhotoLibrary.authorizationStatus()
-        }
-
-        switch authorizationStatus {
-        case .authorized, .limited:
-            completion(true)
-
-        case .denied, .restricted:
-            completion(false)
-
-        case .notDetermined:
-            requestPhotosAccess(completion: completion)
-
-        @unknown default:
-            completion(false)
-        }
-    }
-
-    private func requestCameraAccess(completion: @escaping (_ authorized: Bool) -> Void) {
-        AVCaptureDevice.requestAccess(for: .video) { _ in
-            DispatchQueue.main.async {
-                self.requestCameraAccessIfNeeded(completion: completion)
-            }
-        }
-    }
-
-    private func requestCameraAccessIfNeeded(completion: @escaping (_ authorized: Bool) -> Void) {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            completion(true)
-
-        case .denied, .restricted:
-            completion(false)
-
-        case .notDetermined:
-            requestCameraAccess(completion: completion)
-
-        @unknown default:
-            completion(false)
-        }
-    }
-
-    private func requestAccessIfNeeded(
-        sourceType: UIImagePickerController.SourceType,
-        completion: @escaping (_ authorized: Bool) -> Void
-    ) {
-        switch sourceType {
-        case .photoLibrary, .savedPhotosAlbum:
-            requestPhotosAccessIfNeeded(completion: completion)
-
-        case .camera:
-            requestCameraAccessIfNeeded(completion: completion)
-
-        @unknown default:
-            fatalError()
-        }
-    }
-
     private func pickPhotoImageFromCamera() {
-        requestAccessIfNeeded(sourceType: .camera) { [unowned self] authorized in
-            guard authorized else {
-                return self.present(UIAlertController.cameraPermissionRequired, animated: true)
+        let mediaPicker = MediaPicker(source: .camera) { result in
+            self.screenNavigator.navigate(from: self) { $0.dismiss() }
+
+            if let result = result {
+                self.profileView.photoImage = result.editedImage ?? result.originalImage
             }
+        }
 
-            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                return self.present(UIAlertController.unavailableMediaSource, animated: true)
-            }
+        screenNavigator.navigate(from: self) { route in
+            route
+                .showMediaPicker(mediaPicker)
+                .fallback { error, route in
+                    switch error {
+                    case is MediaPickerSourceAccessDeniedError:
+                        return route.showAlert(.cameraPermissionRequired)
 
-            let imagePickerViewController = UIImagePickerController()
+                    case is UnavailableMediaPickerSourceError:
+                        return route.showAlert(.unavailableMediaSource)
 
-            imagePickerViewController.sourceType = .camera
-            imagePickerViewController.delegate = self
+                    case is UnavailableMediaPickerTypesError:
+                        return route.showAlert(.unavailableMediaTypes)
 
-            self.present(imagePickerViewController, animated: true)
+                    default:
+                        return route.showAlert(.somethingWentWrong)
+                    }
+                }
         }
     }
 
     private func pickPhotoImageFromPhotoLibrary() {
-        requestAccessIfNeeded(sourceType: .photoLibrary) { authorized in
-            guard authorized else {
-                return self.present(UIAlertController.cameraPermissionRequired, animated: true)
+        let mediaPicker = MediaPicker { result in
+            self.screenNavigator.navigate(from: self) { $0.dismiss() }
+
+            if let result = result {
+                self.profileView.photoImage = result.editedImage ?? result.originalImage
             }
+        }
 
-            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                return self.present(UIAlertController.unavailableMediaSource, animated: true)
-            }
+        screenNavigator.navigate(from: self) { route in
+            route
+                .showMediaPicker(mediaPicker)
+                .fallback { error, route in
+                    switch error {
+                    case is MediaPickerSourceAccessDeniedError:
+                        return route.showAlert(.photoLibraryPermissionRequired)
 
-            let imagePickerViewController = UIImagePickerController()
+                    case is UnavailableMediaPickerSourceError:
+                        return route.showAlert(.unavailableMediaSource)
 
-            imagePickerViewController.sourceType = .photoLibrary
-            imagePickerViewController.delegate = self
+                    case is UnavailableMediaPickerTypesError:
+                        return route.showAlert(.unavailableMediaTypes)
 
-            self.present(imagePickerViewController, animated: true)
+                    default:
+                        return route
+                    }
+                }
         }
     }
 
     private func pickPhotoImage(sender: UIView) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionSheet = ActionSheet(
+            anchor: .center(of: sender),
+            actions: [
+                ActionSheetAction(title: "Take Photo") {
+                    self.pickPhotoImageFromCamera()
+                },
+                ActionSheetAction(title: "Choose Photo") {
+                    self.pickPhotoImageFromPhotoLibrary()
+                },
+                .cancel(title: "Cancel")
+            ]
+        )
 
-        if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.sourceRect = CGRect(
-                origin: CGPoint(x: sender.bounds.minX, y: sender.bounds.midY),
-                size: .zero
-            )
-
-            popoverController.sourceView = sender
+        screenNavigator.navigate(from: self) { route in
+            route.showActionSheet(actionSheet)
         }
-
-        actionSheet.addAction(
-            UIAlertAction(title: "Take Photo", style: .default, handler: { action in
-                self.pickPhotoImageFromCamera()
-            })
-        )
-
-        actionSheet.addAction(
-            UIAlertAction(title: "Choose Photo", style: .default, handler: { action in
-                self.pickPhotoImageFromPhotoLibrary()
-            })
-        )
-
-        actionSheet.addAction(
-            UIAlertAction(title: "Cancel", style: .cancel)
-        )
-
-        present(actionSheet, animated: true)
     }
 
     override func loadView() {
@@ -183,61 +114,61 @@ final class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension Alert {
 
-    func imagePickerController(
-        _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
-    ) {
-        let editedImage = info[.editedImage] as? UIImage
-        let originalImage = info[.originalImage] as? UIImage
+    static let somethingWentWrong = Self(
+        title: "Error",
+        message: """
+            Something went wrong.
+            """,
+        actions: AlertAction(title: "OK")
+    )
 
-        profileView.photoImage = editedImage ?? originalImage
+    static let unavailableMediaTypes = Self(
+        title: "Error",
+        message: """
+            Your device does not support the required media types.
+            """,
+        actions: AlertAction(title: "OK")
+    )
 
-        picker.dismiss(animated: true)
-    }
-}
+    static let unavailableMediaSource = Self(
+        title: "Error",
+        message: """
+            Your device does not support the selected media source.
+            """,
+        actions: AlertAction(title: "OK")
+    )
 
-extension UIAlertController {
-
-    static let unavailableMediaSource: UIAlertController = {
-        let alert = UIAlertController(
-            title: "Error",
-            message: """
-                Your device does not support the selected media source.
-                """,
-            preferredStyle: .alert
-        )
-
-        alert.addAction(
-            UIAlertAction(title: "OK", style: .default)
-        )
-
-        return alert
-    }()
-
-    static let cameraPermissionRequired: UIAlertController = {
-        let alert = UIAlertController(
-            title: "Permission Required",
-            message: """
-                The app needs permission to access your device's camera to take a photo. \
-                Please go to Setting > Privacy > Camera, and enable Nivelir Example.
-                """,
-            preferredStyle: .alert
-        )
-
-        alert.addAction(
-            UIAlertAction(title: "Not Now", style: .default)
-        )
-
-        alert.addAction(
-            UIAlertAction(title: "Open Settings", style: .default, handler: { action in
+    static let photoLibraryPermissionRequired = Self(
+        title: "Permission Required",
+        message: """
+            The app needs permission to access your photo library to select a photo. \
+            Please go to Setting > Privacy > Photos and enable Nivelir Example.
+            """,
+        actions: [
+            AlertAction(title: "Not Now"),
+            AlertAction(title: "Open Settings") {
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
                 }
-            })
-        )
+            }
+        ]
+    )
 
-        return alert
-    }()
+    static let cameraPermissionRequired = Self(
+        title: "Permission Required",
+        message: """
+            The app needs permission to access your device's camera to take a photo. \
+            Please go to Setting > Privacy > Camera, and enable Nivelir Example.
+            """,
+        actions: [
+            AlertAction(title: "Not Now"),
+            AlertAction(title: "Open Settings") {
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL)
+                }
+            }
+        ]
+    )
 }
