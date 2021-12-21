@@ -1,2 +1,3 @@
 github "SnapKit/SnapKit" ~> 5.0.0
 github "hhru/HandlersKit" ~> 1.1.0
+github "hhru/Nivelir" ~> 1.1.1

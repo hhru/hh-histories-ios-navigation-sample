@@ -41,6 +41,8 @@
 		8ECA16552770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA16542770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift */; };
 		8ECA16582770CF190051597C /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA16572770CF190051597C /* AuthorizationProvider.swift */; };
 		8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */; };
+		8ECA1672277202690051597C /* Nivelir.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; };
+		8ECA1673277202690051597C /* Nivelir.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECA1671277202690051597C /* Nivelir.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8ECA1632277093150051597C /* SnapKit.xcframework in Embed Frameworks */,
+				8ECA1673277202690051597C /* Nivelir.xcframework in Embed Frameworks */,
 				8ECA164F2770CA160051597C /* HandlersKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -93,6 +96,7 @@
 		8ECA16542770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneNumberScreen.swift; sourceTree = "<group>"; };
 		8ECA16572770CF190051597C /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthorizationProvider.swift; sourceTree = "<group>"; };
+		8ECA1671277202690051597C /* Nivelir.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nivelir.xcframework; path = Carthage/Build/Nivelir.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECA1631277093150051597C /* SnapKit.xcframework in Frameworks */,
+				8ECA1672277202690051597C /* Nivelir.xcframework in Frameworks */,
 				8ECA164E2770CA160051597C /* HandlersKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +252,7 @@
 		8ECA162F277093150051597C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8ECA1671277202690051597C /* Nivelir.xcframework */,
 				8ECA164D2770CA160051597C /* HandlersKit.xcframework */,
 				8ECA1630277093150051597C /* SnapKit.xcframework */,
 			);
