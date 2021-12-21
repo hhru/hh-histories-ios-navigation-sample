@@ -5,6 +5,10 @@ final class ChatViewController: UIViewController, ScreenKeyedContainer {
 
     private let chatID: Int
 
+    private var chatEmptyView: ChatEmptyView {
+        view as! ChatEmptyView
+    }
+
     let screenKey: ScreenKey
     let screenNavigator: ScreenNavigator
 
@@ -30,5 +34,14 @@ final class ChatViewController: UIViewController, ScreenKeyedContainer {
         chatEmptyView.title = "Chat \(chatID)"
 
         view = chatEmptyView
+    }
+}
+
+extension ChatViewController: ScreenRefreshableContainer {
+
+    func refresh(completion: @escaping () -> Void) {
+        chatEmptyView.subtitle = "You're up to date 🎉"
+
+        completion()
     }
 }

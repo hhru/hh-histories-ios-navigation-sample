@@ -11,6 +11,11 @@ final class ChatEmptyView: UIView {
         set { titleLabel.text = newValue }
     }
 
+    var subtitle: String? {
+        get { subtitleLabel.text }
+        set { subtitleLabel.text = newValue }
+    }
+
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
 

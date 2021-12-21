@@ -5,6 +5,10 @@ struct ChatScreen: Screen {
 
     let chatID: Int
 
+    var traits: Set<AnyHashable> {
+        [chatID]
+    }
+
     func build(navigator: ScreenNavigator) -> UIViewController {
         ChatViewController(
             chatID: chatID,

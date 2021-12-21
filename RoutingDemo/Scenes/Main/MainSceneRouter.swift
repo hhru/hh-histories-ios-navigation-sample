@@ -18,14 +18,20 @@ final class MainSceneRouter {
     func showChat(roomID: Int, chatID: Int) {
         navigator.navigate { route in
             route
-                .first(.tabs)
-                .selectTab(with: .index(1), route: { route in
+                .top(.container(of: ChatScreen(chatID: chatID)))
+                .refresh()
+                .fallback { error, route in
                     route
-                        .authorized(with: DefaultAuthorizationProvider.shared)
-                        .present(ChatListScreen(roomID: roomID).withStackContainer()) { route in
-                            route.push(ChatScreen(chatID: chatID))
-                        }
-                })
+                        .first(.tabs)
+                        .selectTab(with: .index(1), route: { route in
+                            route
+                                .dismiss()
+                                .authorized(with: DefaultAuthorizationProvider.shared)
+                                .present(ChatListScreen(roomID: roomID).withStackContainer()) { route in
+                                    route.push(ChatScreen(chatID: chatID))
+                                }
+                        })
+                }
         }
     }
 }

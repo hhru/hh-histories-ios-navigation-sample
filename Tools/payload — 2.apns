@@ -2,10 +2,10 @@
     "Simulator Target Bundle": "ru.hh.RoutingDemo",
     "aps": {
         "alert": {
-            "body": "HeadHunter sent a new message in Chat 1 – Room #1",
+            "body": "HeadHunter sent a new message in Chat 2 – Room #2",
             "title": "New message"
         }
     },
-    "room_id": 1,
-    "chat_id": 1
+    "room_id": 2,
+    "chat_id": 2
 }

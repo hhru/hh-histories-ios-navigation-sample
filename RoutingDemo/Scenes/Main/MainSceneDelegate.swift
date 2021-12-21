@@ -63,4 +63,12 @@ extension MainSceneDelegate: UNUserNotificationCenterDelegate {
 
         router?.showChat(roomID: roomID, chatID: chatID)
     }
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        completionHandler([.alert, .badge, .sound])
+    }
 }
