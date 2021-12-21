@@ -40,21 +40,15 @@ final class HomeTabBarItem: UITabBarItem {
 
 extension UITabBarItem {
 
-    static let publicChats = HomeTabBarItem(
-        title: "Public Chats",
-        image: Images.chatsTab,
-        tag: 1
-    )
-
     static let profile = HomeTabBarItem(
         title: "Profile",
         image: Images.profileTab,
-        tag: 2
+        tag: 1
     )
 
-    static let privateRooms = HomeTabBarItem(
-        title: "Private rooms",
+    static let rooms = HomeTabBarItem(
+        title: "Rooms",
         image: Images.roomsTab,
-        tag: 3
+        tag: 2
     )
 }
