@@ -44,7 +44,17 @@ final class AuthorizationPhoneNumberViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = Colors.background
+        navigationController?.presentationController?.delegate = self
 
         setupPhoneNumberView()
+    }
+}
+
+// MARK: - UIAdaptivePresentationControllerDelegate
+
+extension AuthorizationPhoneNumberViewController: UIAdaptivePresentationControllerDelegate {
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        authorizationCompletion(.notAuthorized)
     }
 }
