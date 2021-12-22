@@ -1,8 +1,12 @@
 import UIKit
+import RouteComposer
 
-struct HomeScreen {
+struct HomeScreen: Factory {
 
-    func build() -> UITabBarController {
+    typealias ViewController = UITabBarController
+    typealias Context = Void
+
+    func build(with context: Void) throws -> UITabBarController {
         let view = HomeTabBarController()
 
         let profileViewController = ProfileScreen().build()

@@ -38,6 +38,7 @@
 		8ECA16552770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA16542770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift */; };
 		8ECA16582770CF190051597C /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA16572770CF190051597C /* AuthorizationProvider.swift */; };
 		8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */; };
+		8ECA16A927734F4D0051597C /* MainSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA16A827734F4D0051597C /* MainSceneRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		8ECA16542770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneNumberScreen.swift; sourceTree = "<group>"; };
 		8ECA16572770CF190051597C /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		8ECA165A2770CF590051597C /* DefaultAuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthorizationProvider.swift; sourceTree = "<group>"; };
+		8ECA16A827734F4D0051597C /* MainSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneRouter.swift; sourceTree = "<group>"; };
 		E38C64661A4B5B06F3C4F711 /* Pods-RoutingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutingDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoutingDemo/Pods-RoutingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBAABB727707A7C003E4B08 /* MainSceneDelegate.swift */,
+				8ECA16A827734F4D0051597C /* MainSceneRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				8ECA164A2770C17E0051597C /* AuthorizationPhoneNumberViewController.swift in Sources */,
 				8EBAAB8C277079F2003E4B08 /* UITableView+Reusable.swift in Sources */,
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
+				8ECA16A927734F4D0051597C /* MainSceneRouter.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

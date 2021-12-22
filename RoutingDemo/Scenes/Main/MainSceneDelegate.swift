@@ -1,8 +1,10 @@
 import UIKit
+import RouteComposer
 
 class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var router: MainSceneRouter?
 
     func scene(
         _ scene: UIScene,
@@ -14,10 +16,12 @@ class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = HomeScreen().build()
+        let router = MainSceneRouter(router: DefaultRouter(), window: window)
 
         self.window = window
+        self.router = router
 
+        router.showRootScreen()
         window.makeKeyAndVisible()
     }
 }
