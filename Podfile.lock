@@ -1,0 +1,24 @@
+PODS:
+  - HandlersKit (1.0.0)
+  - RouteComposer (2.8.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - HandlersKit (~> 1.0.0)
+  - RouteComposer (~> 2.8.1)
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - HandlersKit
+    - RouteComposer
+    - SnapKit
+
+SPEC CHECKSUMS:
+  HandlersKit: 7702c1b098238baf06dd3384ced2c2114c4ebc81
+  RouteComposer: 9cf4740928a04942519c1f382d8957b6f2bc5a63
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 45705f3a61ba4ca574bc32ad1acb5fd37bacbad1
+
+COCOAPODS: 1.11.2
