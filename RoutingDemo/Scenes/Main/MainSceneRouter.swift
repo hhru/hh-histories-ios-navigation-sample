@@ -39,11 +39,12 @@ final class MainSceneRouter {
             .first(.tabs)
             .selectTab(with: .index(1), route: chatScreenFromChatListScreenRoute)
 
-        navigator.navigate { route in
-            route
-                .top(.container(of: ChatScreen(chatID: chatID)))
-                .refresh()
-                .fallback(to: selectTabRoute)
-        }
+        let refreshChatScreenRoute = ScreenWindowRoute
+            .initial
+            .top(.container(of: ChatScreen(chatID: chatID)))
+            .refresh()
+            .fallback(to: selectTabRoute)
+
+        navigator.navigate(to: refreshChatScreenRoute)
     }
 }
