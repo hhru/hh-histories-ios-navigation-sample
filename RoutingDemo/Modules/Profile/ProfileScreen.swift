@@ -1,8 +1,12 @@
 import UIKit
+import RouteComposer
 
-struct ProfileScreen {
+struct ProfileScreen: Factory {
 
-    func build() -> UIViewController {
+    typealias ViewController = UIViewController
+    typealias Context = Void
+
+    func build(with context: Void) throws -> UIViewController {
         ProfileViewController()
     }
 }

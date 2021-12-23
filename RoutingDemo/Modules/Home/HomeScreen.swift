@@ -1,24 +1,23 @@
 import UIKit
 import RouteComposer
 
-struct HomeScreen: Factory {
+struct HomeScreen: ContainerFactory {
 
     typealias ViewController = UITabBarController
     typealias Context = Void
 
-    func build(with context: Void) throws -> UITabBarController {
-        let view = HomeTabBarController()
+    let router: Router
 
-        let profileViewController = ProfileScreen().build()
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
-        profileNavigationController.tabBarItem = .profile
+    func build(with context: Void, integrating coordinator: ChildCoordinator<Void>) throws -> UITabBarController {
+        let controller = HomeTabBarController()
 
-        let roomListViewController = RoomListScreen().build()
-        let roomListNavigationController = UINavigationController(rootViewController: roomListViewController)
-        roomListViewController.tabBarItem = .rooms
+        if !coordinator.isEmpty {
+            controller.viewControllers = try coordinator.build(
+                with: context,
+                integrating: controller.viewControllers ?? []
+            )
+        }
 
-        view.viewControllers = [profileNavigationController, roomListNavigationController]
-
-        return view
+        return controller
     }
 }

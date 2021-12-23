@@ -21,7 +21,7 @@ class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         self.router = router
 
-        router.showRootScreen()
         window.makeKeyAndVisible()
+        router.showRootScreen()
     }
 }
