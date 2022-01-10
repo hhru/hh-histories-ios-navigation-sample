@@ -4,10 +4,10 @@ final class ChatListViewController: UITableViewController {
 
     private var chatCount = Int.random(in: 3...10)
 
-    init(title: String) {
+    init(roomID: Int) {
         super.init(nibName: nil, bundle: nil)
 
-        self.title = title
+        self.title = "Chats – Room #\(roomID)"
     }
 
     @available(*, unavailable)

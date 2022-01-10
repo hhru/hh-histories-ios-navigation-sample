@@ -1,13 +1,16 @@
 import UIKit
+import RouteComposer
 
 final class RoomListViewController: UITableViewController {
 
     private let authorizationProvider: AuthorizationProvider
+    private let router: Router
 
     private var chatCount = Int.random(in: 3...10)
 
-    init(authorizationProvider: AuthorizationProvider) {
+    init(authorizationProvider: AuthorizationProvider, router: Router) {
         self.authorizationProvider = authorizationProvider
+        self.router = router
 
         super.init(nibName: nil, bundle: nil)
 
@@ -20,24 +23,7 @@ final class RoomListViewController: UITableViewController {
     }
 
     private func showChatList(index: Int) {
-        let chatViewController = ChatListScreen(title: "Chats – Room #\(index)").build()
-        let chatNavigationController = UINavigationController(rootViewController: chatViewController)
-
-        if authorizationProvider.isAuthorized {
-            present(chatNavigationController, animated: true)
-        } else {
-            let authorizationViewController = AuthorizationPhoneNumberScreen(authorizationCompletion: { result in
-                if result.isAuthorized {
-                    self.present(chatNavigationController, animated: true)
-                }
-            }).build()
-
-            let authorizationNavigationController = UINavigationController(
-                rootViewController: authorizationViewController
-            )
-
-            present(authorizationNavigationController, animated: true)
-        }
+        try? router.navigate(to: Screens.chatListScreen(router: router), with: index, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

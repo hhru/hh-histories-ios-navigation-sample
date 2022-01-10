@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		507B0A62503E44E750B2FF86 /* Pods_RoutingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008FB76F4D191A9AAF3F87C3 /* Pods_RoutingDemo.framework */; };
+		8E195653278C55B100651304 /* AuthorizationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195652278C55B100651304 /* AuthorizationInterceptor.swift */; };
+		8E753E2B2774B7470006EDBD /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E753E2A2774B7470006EDBD /* Screens.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		008FB76F4D191A9AAF3F87C3 /* Pods_RoutingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1804305A9A0BBF2B993860A9 /* Pods-RoutingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutingDemo.release.xcconfig"; path = "Target Support Files/Pods-RoutingDemo/Pods-RoutingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8E195652278C55B100651304 /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
+		8E753E2A2774B7470006EDBD /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E195651278C557100651304 /* Interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				8E195652278C55B100651304 /* AuthorizationInterceptor.swift */,
+			);
+			path = Interceptors;
+			sourceTree = "<group>";
+		};
 		8EBAAB63277079D1003E4B08 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBAAB83277079F2003E4B08 /* Helpers */,
+				8E195651278C557100651304 /* Interceptors */,
 				8EBAAB8D27707A05003E4B08 /* Modules */,
 				8ECA16562770CEF90051597C /* Provider */,
 				8EBAABAA27707A21003E4B08 /* Resources */,
@@ -132,6 +145,7 @@
 				8EBAAB86277079F2003E4B08 /* Reusable */,
 				8EBAAB85277079F2003E4B08 /* Colors.swift */,
 				8EBAAB84277079F2003E4B08 /* Images.swift */,
+				8E753E2A2774B7470006EDBD /* Screens.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */,
 				8ECA163B2770963A0051597C /* ChatListScreen.swift in Sources */,
 				8ECA16372770958F0051597C /* HomeScreen.swift in Sources */,
+				8E753E2B2774B7470006EDBD /* Screens.swift in Sources */,
 				8EBAABB927707A7C003E4B08 /* MainSceneDelegate.swift in Sources */,
 				8ECA16462770BB0F0051597C /* RoomListViewController.swift in Sources */,
 				8EBAABA527707A05003E4B08 /* ChatViewController.swift in Sources */,
@@ -441,6 +456,7 @@
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
 				8ECA16A927734F4D0051597C /* MainSceneRouter.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
+				8E195653278C55B100651304 /* AuthorizationInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

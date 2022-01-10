@@ -34,7 +34,7 @@ final class MainSceneRouter {
                                 navigationController.tabBarItem = .rooms
                             }
                         )
-                    ).with(RoomListScreen()).assemble(),
+                    ).with(RoomListScreen(router: router)).assemble(),
                     using: UITabBarController.add()
                 )
                 .assemble())
