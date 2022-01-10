@@ -1,10 +1,12 @@
 import UIKit
+import RouteComposer
 
-struct ChatScreen {
+struct ChatScreen: Factory {
 
-    let chatID: Int
+    typealias ViewController = ChatViewController
+    typealias Context = Int
 
-    func build() -> UIViewController {
+    func build(with chatID: Int) throws -> ChatViewController {
         ChatViewController(
             chatID: chatID
         )

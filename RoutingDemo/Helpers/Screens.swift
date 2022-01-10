@@ -1,9 +1,10 @@
 import RouteComposer
+import UIKit
 
 enum Screens {
 
     static func chatListScreen(router: Router) -> DestinationStep<ChatListViewController, Int> {
-        StepAssembly(finder: ClassFinder<ChatListViewController, Int>(), factory: ChatListScreen())
+        StepAssembly(finder: ClassFinder<ChatListViewController, Int>(), factory: ChatListScreen(router: router))
             .adding(
                 AuthorizationInterceptor(authorizationProvider: DefaultAuthorizationProvider.shared, router: router)
             )
@@ -11,6 +12,13 @@ enum Screens {
             .from(NavigationControllerStep<UINavigationController, Int>())
             .using(GeneralAction.presentModally(presentationStyle: .formSheet))
             .from(GeneralStep.current())
+            .assemble()
+    }
+
+    static func chatScreen(router: Router) -> DestinationStep<ChatViewController, Int> {
+        StepAssembly(finder: ClassFinder<ChatViewController, Int>(options: .currentAllStack), factory: ChatScreen())
+            .using(UINavigationController.push())
+            .from(chatListScreen(router: router).expectingContainer())
             .assemble()
     }
 
