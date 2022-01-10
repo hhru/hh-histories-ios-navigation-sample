@@ -57,7 +57,7 @@ enum Screens {
 
     static func chatScreen(router: Router) -> DestinationStep<ChatViewController, ChatContext> {
         StepAssembly(
-            finder: ClassFinder<ChatViewController, ChatContext>(options: .currentAllStack),
+            finder: ClassWithContextRefreshableFinder<ChatViewController, ChatContext>(options: .currentAllStack),
             factory: ChatScreen()
         )
             .using(UINavigationController.push())

@@ -12,7 +12,8 @@ struct ChatScreen: Factory {
         }
 
         return ChatViewController(
-            chatID: chatID
+            chatID: chatID,
+            roomID: context.roomID
         )
     }
 }

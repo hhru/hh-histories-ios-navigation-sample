@@ -1,11 +1,18 @@
 import UIKit
+import RouteComposer
 
 final class ChatViewController: UIViewController {
 
-    let chatID: Int
+    private let chatID: Int
+    private let roomID: Int
 
-    init(chatID: Int) {
+    private var chatEmptyView: ChatEmptyView {
+        view as! ChatEmptyView
+    }
+
+    init(chatID: Int, roomID: Int) {
         self.chatID = chatID
+        self.roomID = roomID
 
         super.init(nibName: nil, bundle: nil)
 
@@ -25,5 +32,25 @@ final class ChatViewController: UIViewController {
         chatEmptyView.title = "Chat \(chatID)"
 
         view = chatEmptyView
+    }
+}
+
+// MARK: - ScreenRefreshableContainer
+
+extension ChatViewController: ScreenRefreshableContainer {
+
+    func refresh(with context: ChatContext) {
+        if chatID == context.chatID, roomID == context.roomID {
+            chatEmptyView.subtitle = "You're up to date 🎉"
+        }
+    }
+}
+
+// MARK: - ContextChecking
+
+extension ChatViewController: ContextChecking {
+
+    func isTarget(for context: ChatContext) -> Bool {
+        chatID == context.chatID && roomID == context.roomID
     }
 }
