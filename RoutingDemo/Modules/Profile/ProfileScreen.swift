@@ -4,9 +4,9 @@ import RouteComposer
 struct ProfileScreen: Factory {
 
     typealias ViewController = UIViewController
-    typealias Context = Void
+    typealias Context = Any?
 
-    func build(with context: Void) throws -> UIViewController {
+    func build(with context: Any?) throws -> UIViewController {
         ProfileViewController()
     }
 }

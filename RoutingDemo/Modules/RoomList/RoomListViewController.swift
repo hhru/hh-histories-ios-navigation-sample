@@ -23,7 +23,12 @@ final class RoomListViewController: UITableViewController {
     }
 
     private func showChatList(index: Int) {
-        try? router.navigate(to: Screens.chatListScreen(router: router), with: index, animated: true, completion: nil)
+        try? router.navigate(
+            to: Screens.chatListScreen(router: router),
+            with: ChatContext(roomID: index, chatID: nil),
+            animated: true,
+            completion: nil
+        )
     }
 
     override func viewDidLoad() {

@@ -3,11 +3,13 @@ import RouteComposer
 
 final class ChatListViewController: UITableViewController {
 
+    private let roomID: Int
     private let router: Router
 
     private var chatCount = Int.random(in: 3...10)
 
     init(roomID: Int, router: Router) {
+        self.roomID = roomID
         self.router = router
 
         super.init(nibName: nil, bundle: nil)
@@ -23,7 +25,7 @@ final class ChatListViewController: UITableViewController {
     private func showChat(id: Int) {
         try? router.navigate(
             to: Screens.chatScreen(router: router),
-            with: id,
+            with: ChatContext(roomID: roomID, chatID: id),
             animated: true,
             completion: nil
         )

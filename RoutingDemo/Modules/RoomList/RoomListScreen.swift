@@ -3,12 +3,12 @@ import RouteComposer
 
 struct RoomListScreen: Factory {
 
-    typealias ViewController = UIViewController
-    typealias Context = Void
+    typealias ViewController = RoomListViewController
+    typealias Context = Any?
 
     let router: Router
 
-    func build(with context: Void) throws -> UIViewController {
+    func build(with context: Any?) throws -> RoomListViewController {
         RoomListViewController(authorizationProvider: DefaultAuthorizationProvider.shared, router: router)
     }
 }

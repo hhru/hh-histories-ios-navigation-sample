@@ -3,12 +3,12 @@ import RouteComposer
 
 struct HomeScreen: ContainerFactory {
 
-    typealias ViewController = UITabBarController
-    typealias Context = Void
+    typealias ViewController = HomeTabBarController
+    typealias Context = Any?
 
     let router: Router
 
-    func build(with context: Void, integrating coordinator: ChildCoordinator<Void>) throws -> UITabBarController {
+    func build(with context: Any?, integrating coordinator: ChildCoordinator<Any?>) throws -> HomeTabBarController {
         let controller = HomeTabBarController()
 
         if !coordinator.isEmpty {
