@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E19566C278D962A00651304 /* ViewControllerContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195664278D962900651304 /* ViewControllerContextSwitcher.swift */; };
+		8E19566D278D962A00651304 /* ViewControllerContextTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195665278D962900651304 /* ViewControllerContextTransition.swift */; };
+		8E19566E278D962A00651304 /* ViewControllerContextRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195666278D962900651304 /* ViewControllerContextRouter.swift */; };
+		8E19566F278D962A00651304 /* ViewControllerContextHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195667278D962A00651304 /* ViewControllerContextHolder.swift */; };
+		8E195670278D962A00651304 /* TopViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195668278D962A00651304 /* TopViewControllerProvider.swift */; };
+		8E195671278D962A00651304 /* ViewControllersByContextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */; };
+		8E195672278D962A00651304 /* ViewControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19566A278D962A00651304 /* ViewControllerContext.swift */; };
+		8E195673278D962A00651304 /* ViewControllerContextTransitionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -59,6 +67,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8E195664278D962900651304 /* ViewControllerContextSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextSwitcher.swift; sourceTree = "<group>"; };
+		8E195665278D962900651304 /* ViewControllerContextTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextTransition.swift; sourceTree = "<group>"; };
+		8E195666278D962900651304 /* ViewControllerContextRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextRouter.swift; sourceTree = "<group>"; };
+		8E195667278D962A00651304 /* ViewControllerContextHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextHolder.swift; sourceTree = "<group>"; };
+		8E195668278D962A00651304 /* TopViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewControllerProvider.swift; sourceTree = "<group>"; };
+		8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersByContextFactory.swift; sourceTree = "<group>"; };
+		8E19566A278D962A00651304 /* ViewControllerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContext.swift; sourceTree = "<group>"; };
+		8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextTransitionProvider.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -108,6 +124,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E195663278D961E00651304 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				8E195668278D962A00651304 /* TopViewControllerProvider.swift */,
+				8E19566A278D962A00651304 /* ViewControllerContext.swift */,
+				8E195667278D962A00651304 /* ViewControllerContextHolder.swift */,
+				8E195666278D962900651304 /* ViewControllerContextRouter.swift */,
+				8E195664278D962900651304 /* ViewControllerContextSwitcher.swift */,
+				8E195665278D962900651304 /* ViewControllerContextTransition.swift */,
+				8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */,
+				8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		8EBAAB63277079D1003E4B08 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +161,7 @@
 			children = (
 				8EBAAB83277079F2003E4B08 /* Helpers */,
 				8EBAAB8D27707A05003E4B08 /* Modules */,
+				8E195663278D961E00651304 /* Navigator */,
 				8ECA16562770CEF90051597C /* Provider */,
 				8EBAABAA27707A21003E4B08 /* Resources */,
 				8EBAABB427707A7C003E4B08 /* Scenes */,
@@ -373,6 +405,7 @@
 			files = (
 				8EBAABA427707A05003E4B08 /* ChatEmptyView.swift in Sources */,
 				8EBAABA127707A05003E4B08 /* ChatListCell.swift in Sources */,
+				8E195671278D962A00651304 /* ViewControllersByContextFactory.swift in Sources */,
 				8EBAAB8B277079F2003E4B08 /* Reusable.swift in Sources */,
 				8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */,
 				8EBAAB9E27707A05003E4B08 /* HomeTabBarItem.swift in Sources */,
@@ -386,6 +419,7 @@
 				8EBAABA927707A06003E4B08 /* ProfileViewController.swift in Sources */,
 				8EBAABA227707A05003E4B08 /* ChatListViewController.swift in Sources */,
 				8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */,
+				8E195670278D962A00651304 /* TopViewControllerProvider.swift in Sources */,
 				8ECA16422770BA7A0051597C /* RoomListCell.swift in Sources */,
 				8EBAABA827707A06003E4B08 /* ProfileView.swift in Sources */,
 				8EBAAB89277079F2003E4B08 /* Images.swift in Sources */,
@@ -393,10 +427,16 @@
 				8ECA163B2770963A0051597C /* ChatListScreen.swift in Sources */,
 				8ECA16372770958F0051597C /* HomeScreen.swift in Sources */,
 				8EBAABB927707A7C003E4B08 /* MainSceneDelegate.swift in Sources */,
+				8E195672278D962A00651304 /* ViewControllerContext.swift in Sources */,
 				8ECA16462770BB0F0051597C /* RoomListViewController.swift in Sources */,
 				8EBAABA527707A05003E4B08 /* ChatViewController.swift in Sources */,
 				8ECA164A2770C17E0051597C /* AuthorizationPhoneNumberViewController.swift in Sources */,
+				8E19566D278D962A00651304 /* ViewControllerContextTransition.swift in Sources */,
+				8E19566F278D962A00651304 /* ViewControllerContextHolder.swift in Sources */,
+				8E195673278D962A00651304 /* ViewControllerContextTransitionProvider.swift in Sources */,
 				8EBAAB8C277079F2003E4B08 /* UITableView+Reusable.swift in Sources */,
+				8E19566E278D962A00651304 /* ViewControllerContextRouter.swift in Sources */,
+				8E19566C278D962A00651304 /* ViewControllerContextSwitcher.swift in Sources */,
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
 			);
