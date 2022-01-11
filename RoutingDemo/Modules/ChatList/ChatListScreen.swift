@@ -2,9 +2,9 @@ import UIKit
 
 struct ChatListScreen {
 
-    let title: String
+    let roomID: Int
 
     func build() -> UIViewController {
-        ChatListViewController(title: title)
+        ChatListViewController(roomID: roomID)
     }
 }

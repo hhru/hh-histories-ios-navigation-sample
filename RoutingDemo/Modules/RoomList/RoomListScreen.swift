@@ -2,7 +2,12 @@ import UIKit
 
 struct RoomListScreen {
 
-    func build() -> UIViewController {
-        RoomListViewController(authorizationProvider: DefaultAuthorizationProvider.shared)
+    func build() -> UINavigationController {
+        let viewController = RoomListViewController(authorizationProvider: DefaultAuthorizationProvider.shared)
+        let stack = UINavigationController(rootViewController: viewController)
+
+        stack.tabBarItem = .rooms
+
+        return stack
     }
 }

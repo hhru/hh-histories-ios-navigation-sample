@@ -15,6 +15,19 @@
 		8E195671278D962A00651304 /* ViewControllersByContextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */; };
 		8E195672278D962A00651304 /* ViewControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19566A278D962A00651304 /* ViewControllerContext.swift */; };
 		8E195673278D962A00651304 /* ViewControllerContextTransitionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */; };
+		8E195675278DA47500651304 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195674278DA47500651304 /* ScreenFactory.swift */; };
+		8E195677278DB44800651304 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195676278DB44800651304 /* ScreenType.swift */; };
+		8E195679278DB67400651304 /* AuthorizationPhoneNumberContextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195678278DB67400651304 /* AuthorizationPhoneNumberContextInfo.swift */; };
+		8E19567C278DB79B00651304 /* Int+ViewControllerContextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19567B278DB79B00651304 /* Int+ViewControllerContextInfo.swift */; };
+		8E195680278DB9DD00651304 /* ScreenTransitionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19567F278DB9DD00651304 /* ScreenTransitionProvider.swift */; };
+		8E195683278DBA2700651304 /* PresentModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195682278DBA2700651304 /* PresentModalTransition.swift */; };
+		8E195685278DBA7400651304 /* PushStackTranition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195684278DBA7400651304 /* PushStackTranition.swift */; };
+		8E195687278DBBA200651304 /* SetRootTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195686278DBBA200651304 /* SetRootTransition.swift */; };
+		8E195689278DBC5500651304 /* SetupTabTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195688278DBC5500651304 /* SetupTabTransition.swift */; };
+		8E19568C278DBD5A00651304 /* TabsContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19568B278DBD5A00651304 /* TabsContextSwitcher.swift */; };
+		8E19568E278DBDE700651304 /* StackContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19568D278DBDE700651304 /* StackContextSwitcher.swift */; };
+		8E195690278DBF2400651304 /* MainSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19568F278DBF2400651304 /* MainSceneRouter.swift */; };
+		8E195693278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -75,6 +88,19 @@
 		8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersByContextFactory.swift; sourceTree = "<group>"; };
 		8E19566A278D962A00651304 /* ViewControllerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContext.swift; sourceTree = "<group>"; };
 		8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContextTransitionProvider.swift; sourceTree = "<group>"; };
+		8E195674278DA47500651304 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		8E195676278DB44800651304 /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
+		8E195678278DB67400651304 /* AuthorizationPhoneNumberContextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPhoneNumberContextInfo.swift; sourceTree = "<group>"; };
+		8E19567B278DB79B00651304 /* Int+ViewControllerContextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ViewControllerContextInfo.swift"; sourceTree = "<group>"; };
+		8E19567F278DB9DD00651304 /* ScreenTransitionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionProvider.swift; sourceTree = "<group>"; };
+		8E195682278DBA2700651304 /* PresentModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentModalTransition.swift; sourceTree = "<group>"; };
+		8E195684278DBA7400651304 /* PushStackTranition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushStackTranition.swift; sourceTree = "<group>"; };
+		8E195686278DBBA200651304 /* SetRootTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRootTransition.swift; sourceTree = "<group>"; };
+		8E195688278DBC5500651304 /* SetupTabTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTabTransition.swift; sourceTree = "<group>"; };
+		8E19568B278DBD5A00651304 /* TabsContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsContextSwitcher.swift; sourceTree = "<group>"; };
+		8E19568D278DBDE700651304 /* StackContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContextSwitcher.swift; sourceTree = "<group>"; };
+		8E19568F278DBF2400651304 /* MainSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneRouter.swift; sourceTree = "<group>"; };
+		8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerContextRouterProtocol+ScreenType.swift"; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -127,6 +153,11 @@
 		8E195663278D961E00651304 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				8E195691278DC03E00651304 /* ScreenType */,
+				8E19568A278DBD3100651304 /* Switchers */,
+				8E195681278DBA1E00651304 /* Transitions */,
+				8E19567A278DB77300651304 /* Extensions */,
+				8E19567D278DB8DF00651304 /* ScreenFactory */,
 				8E195668278D962A00651304 /* TopViewControllerProvider.swift */,
 				8E19566A278D962A00651304 /* ViewControllerContext.swift */,
 				8E195667278D962A00651304 /* ViewControllerContextHolder.swift */,
@@ -137,6 +168,52 @@
 				8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */,
 			);
 			path = Navigator;
+			sourceTree = "<group>";
+		};
+		8E19567A278DB77300651304 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E19567B278DB79B00651304 /* Int+ViewControllerContextInfo.swift */,
+				8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E19567D278DB8DF00651304 /* ScreenFactory */ = {
+			isa = PBXGroup;
+			children = (
+				8E195674278DA47500651304 /* ScreenFactory.swift */,
+				8E19567F278DB9DD00651304 /* ScreenTransitionProvider.swift */,
+			);
+			path = ScreenFactory;
+			sourceTree = "<group>";
+		};
+		8E195681278DBA1E00651304 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				8E195682278DBA2700651304 /* PresentModalTransition.swift */,
+				8E195684278DBA7400651304 /* PushStackTranition.swift */,
+				8E195686278DBBA200651304 /* SetRootTransition.swift */,
+				8E195688278DBC5500651304 /* SetupTabTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		8E19568A278DBD3100651304 /* Switchers */ = {
+			isa = PBXGroup;
+			children = (
+				8E19568B278DBD5A00651304 /* TabsContextSwitcher.swift */,
+				8E19568D278DBDE700651304 /* StackContextSwitcher.swift */,
+			);
+			path = Switchers;
+			sourceTree = "<group>";
+		};
+		8E195691278DC03E00651304 /* ScreenType */ = {
+			isa = PBXGroup;
+			children = (
+				8E195676278DB44800651304 /* ScreenType.swift */,
+			);
+			path = ScreenType;
 			sourceTree = "<group>";
 		};
 		8EBAAB63277079D1003E4B08 = {
@@ -272,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBAABB727707A7C003E4B08 /* MainSceneDelegate.swift */,
+				8E19568F278DBF2400651304 /* MainSceneRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -308,6 +386,7 @@
 			children = (
 				8ECA16522770CD970051597C /* AuthorizationCompletion.swift */,
 				8ECA16502770CD730051597C /* AuthorizationCompletionResult.swift */,
+				8E195678278DB67400651304 /* AuthorizationPhoneNumberContextInfo.swift */,
 				8ECA16542770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift */,
 				8ECA164B2770C1A20051597C /* AuthorizationPhoneNumberView.swift */,
 				8ECA16492770C17E0051597C /* AuthorizationPhoneNumberViewController.swift */,
@@ -404,21 +483,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EBAABA427707A05003E4B08 /* ChatEmptyView.swift in Sources */,
+				8E195679278DB67400651304 /* AuthorizationPhoneNumberContextInfo.swift in Sources */,
+				8E195675278DA47500651304 /* ScreenFactory.swift in Sources */,
 				8EBAABA127707A05003E4B08 /* ChatListCell.swift in Sources */,
+				8E19567C278DB79B00651304 /* Int+ViewControllerContextInfo.swift in Sources */,
 				8E195671278D962A00651304 /* ViewControllersByContextFactory.swift in Sources */,
 				8EBAAB8B277079F2003E4B08 /* Reusable.swift in Sources */,
 				8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */,
+				8E195693278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift in Sources */,
 				8EBAAB9E27707A05003E4B08 /* HomeTabBarItem.swift in Sources */,
+				8E195687278DBBA200651304 /* SetRootTransition.swift in Sources */,
 				8EBAABA027707A05003E4B08 /* HomeTabBarController.swift in Sources */,
 				8ECA163D277096CA0051597C /* ProfileScreen.swift in Sources */,
 				8ECA163F277099F40051597C /* ChatScreen.swift in Sources */,
+				8E195683278DBA2700651304 /* PresentModalTransition.swift in Sources */,
+				8E195680278DB9DD00651304 /* ScreenTransitionProvider.swift in Sources */,
 				8ECA16512770CD730051597C /* AuthorizationCompletionResult.swift in Sources */,
 				8ECA16582770CF190051597C /* AuthorizationProvider.swift in Sources */,
 				8ECA16552770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift in Sources */,
 				8ECA16442770BAFB0051597C /* RoomListScreen.swift in Sources */,
 				8EBAABA927707A06003E4B08 /* ProfileViewController.swift in Sources */,
+				8E195690278DBF2400651304 /* MainSceneRouter.swift in Sources */,
+				8E195685278DBA7400651304 /* PushStackTranition.swift in Sources */,
 				8EBAABA227707A05003E4B08 /* ChatListViewController.swift in Sources */,
 				8ECA165B2770CF590051597C /* DefaultAuthorizationProvider.swift in Sources */,
+				8E195677278DB44800651304 /* ScreenType.swift in Sources */,
+				8E19568E278DBDE700651304 /* StackContextSwitcher.swift in Sources */,
 				8E195670278D962A00651304 /* TopViewControllerProvider.swift in Sources */,
 				8ECA16422770BA7A0051597C /* RoomListCell.swift in Sources */,
 				8EBAABA827707A06003E4B08 /* ProfileView.swift in Sources */,
@@ -431,12 +521,14 @@
 				8ECA16462770BB0F0051597C /* RoomListViewController.swift in Sources */,
 				8EBAABA527707A05003E4B08 /* ChatViewController.swift in Sources */,
 				8ECA164A2770C17E0051597C /* AuthorizationPhoneNumberViewController.swift in Sources */,
+				8E19568C278DBD5A00651304 /* TabsContextSwitcher.swift in Sources */,
 				8E19566D278D962A00651304 /* ViewControllerContextTransition.swift in Sources */,
 				8E19566F278D962A00651304 /* ViewControllerContextHolder.swift in Sources */,
 				8E195673278D962A00651304 /* ViewControllerContextTransitionProvider.swift in Sources */,
 				8EBAAB8C277079F2003E4B08 /* UITableView+Reusable.swift in Sources */,
 				8E19566E278D962A00651304 /* ViewControllerContextRouter.swift in Sources */,
 				8E19566C278D962A00651304 /* ViewControllerContextSwitcher.swift in Sources */,
+				8E195689278DBC5500651304 /* SetupTabTransition.swift in Sources */,
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
 			);

@@ -20,7 +20,7 @@ final class RoomListViewController: UITableViewController {
     }
 
     private func showChatList(index: Int) {
-        let chatViewController = ChatListScreen(title: "Chats – Room #\(index)").build()
+        let chatViewController = ChatListScreen(roomID: index).build()
         let chatNavigationController = UINavigationController(rootViewController: chatViewController)
 
         if authorizationProvider.isAuthorized {
