@@ -22,7 +22,7 @@
 
 import Foundation
 
-protocol ViewControllerContextRouterProtocol {
+protocol ViewControllerContextRouterProtocol: AnyObject {
     func navigateToContext(_ context: ViewControllerContext, animated: Bool)
 }
 

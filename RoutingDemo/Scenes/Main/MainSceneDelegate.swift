@@ -19,16 +19,21 @@ class MainSceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabsContextSwitcher = TabsContextSwitcher(window: window)
         let stackContextSwitcher = StackContextSwitcher(topViewControllerProvider: DefaultTopViewControllerProvider())
 
+        let authorizationContextSwitcher = AuthorizationContextSwitcher(
+            authorizationProvider: DefaultAuthorizationProvider.shared
+        )
+
         let router = ViewControllerContextRouter(
             topViewControllerProvider: DefaultTopViewControllerProvider(),
             viewControllersFactory: screenFactory,
             transitionProvider: ScreenTransitionProvider(window: window),
-            contextSwitchers: [tabsContextSwitcher, stackContextSwitcher]
+            contextSwitchers: [tabsContextSwitcher, stackContextSwitcher, authorizationContextSwitcher]
         )
 
         let sceneRouter = MainSceneRouter(router: router)
 
         screenFactory.router = router
+        authorizationContextSwitcher.router = router
 
         self.window = window
         self.router = sceneRouter

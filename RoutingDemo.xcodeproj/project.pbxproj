@@ -28,6 +28,7 @@
 		8E19568E278DBDE700651304 /* StackContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19568D278DBDE700651304 /* StackContextSwitcher.swift */; };
 		8E195690278DBF2400651304 /* MainSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19568F278DBF2400651304 /* MainSceneRouter.swift */; };
 		8E195693278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */; };
+		8E195695278DCDB700651304 /* AuthorizationContextSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195694278DCDB700651304 /* AuthorizationContextSwitcher.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -101,6 +102,7 @@
 		8E19568D278DBDE700651304 /* StackContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackContextSwitcher.swift; sourceTree = "<group>"; };
 		8E19568F278DBF2400651304 /* MainSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneRouter.swift; sourceTree = "<group>"; };
 		8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerContextRouterProtocol+ScreenType.swift"; sourceTree = "<group>"; };
+		8E195694278DCDB700651304 /* AuthorizationContextSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationContextSwitcher.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -202,8 +204,9 @@
 		8E19568A278DBD3100651304 /* Switchers */ = {
 			isa = PBXGroup;
 			children = (
-				8E19568B278DBD5A00651304 /* TabsContextSwitcher.swift */,
+				8E195694278DCDB700651304 /* AuthorizationContextSwitcher.swift */,
 				8E19568D278DBDE700651304 /* StackContextSwitcher.swift */,
+				8E19568B278DBD5A00651304 /* TabsContextSwitcher.swift */,
 			);
 			path = Switchers;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				8E19566C278D962A00651304 /* ViewControllerContextSwitcher.swift in Sources */,
 				8E195689278DBC5500651304 /* SetupTabTransition.swift in Sources */,
 				8ECA164C2770C1A20051597C /* AuthorizationPhoneNumberView.swift in Sources */,
+				8E195695278DCDB700651304 /* AuthorizationContextSwitcher.swift in Sources */,
 				8ECA16532770CD970051597C /* AuthorizationCompletion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

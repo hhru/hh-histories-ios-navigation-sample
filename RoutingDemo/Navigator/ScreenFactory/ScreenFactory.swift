@@ -2,7 +2,7 @@ import UIKit
 
 final class ScreenFactory: ViewControllersByContextFactory {
 
-    var router: ViewControllerContextRouterProtocol?
+    weak var router: ViewControllerContextRouterProtocol?
 
     func viewController(for context: ViewControllerContext) -> UIViewController? {
         guard let screenType = ScreenType(rawValue: context.screenType) else {
@@ -33,7 +33,11 @@ final class ScreenFactory: ViewControllersByContextFactory {
         case .profile:
             return ProfileScreen().build()
         case .roomList:
-            return RoomListScreen().build()
+            guard let router = router else {
+                return nil
+            }
+
+            return RoomListScreen(router: router).build()
         }
     }
 }

@@ -4,7 +4,7 @@ struct ChatListScreen {
 
     let roomID: Int
 
-    func build() -> UIViewController {
-        ChatListViewController(roomID: roomID)
+    func build() -> UINavigationController {
+        UINavigationController(rootViewController: ChatListViewController(roomID: roomID))
     }
 }
