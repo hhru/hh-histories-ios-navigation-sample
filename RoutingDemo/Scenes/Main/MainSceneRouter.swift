@@ -10,7 +10,5 @@ final class MainSceneRouter {
 
     func showRootScreen() {
         router.navigateToScreen(.home, animated: false)
-        router.navigateToScreen(.profile, animated: false)
-        router.navigateToScreen(.roomList, animated: false)
     }
 }

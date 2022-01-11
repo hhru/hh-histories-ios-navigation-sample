@@ -5,7 +5,7 @@ final class ScreenFactory: ViewControllersByContextFactory {
     weak var router: ViewControllerContextRouterProtocol?
 
     func viewController(for context: ViewControllerContext) -> UIViewController? {
-        guard let screenType = ScreenType(rawValue: context.screenType) else {
+        guard let screenType = ScreenType(rawValue: context.screenType), let router = router else {
             return nil
         }
 
@@ -27,16 +27,12 @@ final class ScreenFactory: ViewControllersByContextFactory {
                 return nil
             }
 
-            return ChatListScreen(roomID: roomID).build()
+            return ChatListScreen(roomID: roomID, router: router).build()
         case .home:
-            return HomeScreen().build()
+            return HomeScreen(router: router).build()
         case .profile:
             return ProfileScreen().build()
         case .roomList:
-            guard let router = router else {
-                return nil
-            }
-
             return RoomListScreen(router: router).build()
         }
     }

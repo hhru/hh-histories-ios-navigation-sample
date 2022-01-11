@@ -2,9 +2,13 @@ import UIKit
 
 final class ChatListViewController: UITableViewController {
 
+    private let router: ViewControllerContextRouterProtocol
+
     private var chatCount = Int.random(in: 3...10)
 
-    init(roomID: Int) {
+    init(roomID: Int, router: ViewControllerContextRouterProtocol) {
+        self.router = router
+
         super.init(nibName: nil, bundle: nil)
 
         self.title = "Chats – Room #\(roomID)"
@@ -16,7 +20,7 @@ final class ChatListViewController: UITableViewController {
     }
 
     private func showChat(id: Int) {
-        navigationController?.pushViewController(ChatScreen(chatID: id).build(), animated: true)
+        router.navigateToScreen(.chat, with: id, animated: true)
     }
 
     override func viewDidLoad() {
@@ -24,10 +28,7 @@ final class ChatListViewController: UITableViewController {
 
         view.backgroundColor = Colors.background
 
-        #if os(iOS)
         tableView.separatorStyle = .none
-        #endif
-
         tableView.registerReusableCell(of: ChatListCell.self)
     }
 }

@@ -23,9 +23,9 @@ final class ScreenTransitionProvider: ViewControllerContextTransitionProvider {
         case .home:
             return SetRootTransition(window: window)
         case .profile:
-            return SetupTabTransition()
+            return PresentModalTransition()
         case .roomList:
-            return SetupTabTransition()
+            return PresentModalTransition()
         }
     }
 }

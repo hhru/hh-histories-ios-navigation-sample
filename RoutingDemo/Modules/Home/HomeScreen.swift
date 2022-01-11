@@ -2,7 +2,16 @@ import UIKit
 
 struct HomeScreen {
 
+    let router: ViewControllerContextRouterProtocol
+
     func build() -> UITabBarController {
-        HomeTabBarController()
+        let tabs = HomeTabBarController()
+
+        tabs.viewControllers = [
+            ProfileScreen().build(),
+            RoomListScreen(router: router).build()
+        ]
+
+        return tabs
     }
 }

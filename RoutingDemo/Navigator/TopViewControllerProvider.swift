@@ -43,8 +43,9 @@ final class DefaultTopViewControllerProvider: TopViewControllerProvider {
     private func traverseViewControllersHierarchy(startingFrom root: UIViewController) -> UIViewController? {
         var currentViewController: UIViewController? = root
         while currentViewController != nil {
-            if let customContainer = currentViewController as? TopViewControllerProvider {
-                currentViewController = customContainer.topViewController
+            if let customContainer = currentViewController as? TopViewControllerProvider,
+               let topViewController = customContainer.topViewController {
+                currentViewController = topViewController
             } else if let presentedController = currentViewController?.presentedViewController {
                 currentViewController = presentedController
             } else {
