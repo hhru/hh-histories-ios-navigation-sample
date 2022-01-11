@@ -69,3 +69,12 @@ extension ChatListViewController {
         72.0
     }
 }
+
+// MARK: - ContextChecking
+
+extension ChatListViewController: ContextChecking {
+
+    func isTarget(for context: ChatContext) -> Bool {
+        roomID == context.roomID
+    }
+}

@@ -42,7 +42,7 @@ enum Screens {
 
     static func chatListScreen(router: Router) -> DestinationStep<ChatListViewController, ChatContext> {
         StepAssembly(
-            finder: ClassFinder<ChatListViewController, ChatContext>(),
+            finder: ClassWithContextFinder<ChatListViewController, ChatContext>(),
             factory: ChatListScreen(router: router)
         )
             .adding(
