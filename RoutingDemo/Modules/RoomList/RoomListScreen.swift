@@ -5,8 +5,12 @@ struct RoomListScreen {
     let router: ViewControllerContextRouterProtocol
 
     func build() -> UINavigationController {
-        let viewController = RoomListViewController(router: router)
-        let stack = UINavigationController(rootViewController: viewController)
+        let stack = UINavigationController(
+            rootViewController: RoomListViewController(
+                router: router,
+                authorizationProvider: DefaultAuthorizationProvider.shared
+            )
+        )
 
         stack.tabBarItem = .rooms
 

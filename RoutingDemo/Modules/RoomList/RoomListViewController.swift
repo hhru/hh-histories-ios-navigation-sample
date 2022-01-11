@@ -3,11 +3,13 @@ import UIKit
 final class RoomListViewController: UITableViewController {
 
     private let router: ViewControllerContextRouterProtocol
+    private let authorizationProvider: AuthorizationProvider
 
     private var chatCount = Int.random(in: 3...10)
 
-    init(router: ViewControllerContextRouterProtocol) {
+    init(router: ViewControllerContextRouterProtocol, authorizationProvider: AuthorizationProvider) {
         self.router = router
+        self.authorizationProvider = authorizationProvider
 
         super.init(nibName: nil, bundle: nil)
 
@@ -20,7 +22,19 @@ final class RoomListViewController: UITableViewController {
     }
 
     private func showChatList(index: Int) {
-        router.navigateToScreen(.chatList, with: index, animated: true)
+        if authorizationProvider.isAuthorized {
+            router.navigateToScreen(.chatList, with: index, animated: true)
+        } else {
+            router.navigateToScreen(
+                .authorization,
+                with: AuthorizationPhoneNumberContextInfo(authorizationCompletion: { [unowned self] result in
+                    if result.isAuthorized {
+                        self.router.navigateToScreen(.chatList, with: index, animated: true)
+                    }
+                }),
+                animated: true
+            )
+        }
     }
 
     override func viewDidLoad() {
