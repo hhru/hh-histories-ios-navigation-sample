@@ -29,6 +29,8 @@
 		8E195693278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */; };
 		8E195698278DD22C00651304 /* UINavigationController+TopViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195696278DD22C00651304 /* UINavigationController+TopViewControllerProvider.swift */; };
 		8E195699278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195697278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift */; };
+		8E19569B278DEE2000651304 /* ViewControllerContext+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19569A278DEE2000651304 /* ViewControllerContext+ScreenType.swift */; };
+		8E19569D278EB63800651304 /* RefreshableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19569C278EB63800651304 /* RefreshableViewController.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -103,6 +105,8 @@
 		8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerContextRouterProtocol+ScreenType.swift"; sourceTree = "<group>"; };
 		8E195696278DD22C00651304 /* UINavigationController+TopViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+TopViewControllerProvider.swift"; sourceTree = "<group>"; };
 		8E195697278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarController+TopViewControllerProvider.swift"; sourceTree = "<group>"; };
+		8E19569A278DEE2000651304 /* ViewControllerContext+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerContext+ScreenType.swift"; sourceTree = "<group>"; };
+		8E19569C278EB63800651304 /* RefreshableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				8E195665278D962900651304 /* ViewControllerContextTransition.swift */,
 				8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */,
 				8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */,
+				8E19569C278EB63800651304 /* RefreshableViewController.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				8E19567B278DB79B00651304 /* Int+ViewControllerContextInfo.swift */,
 				8E195696278DD22C00651304 /* UINavigationController+TopViewControllerProvider.swift */,
 				8E195697278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift */,
+				8E19569A278DEE2000651304 /* ViewControllerContext+ScreenType.swift */,
 				8E195692278DC06A00651304 /* ViewControllerContextRouterProtocol+ScreenType.swift */,
 			);
 			path = Extensions;
@@ -497,9 +503,11 @@
 				8EBAAB9E27707A05003E4B08 /* HomeTabBarItem.swift in Sources */,
 				8E195687278DBBA200651304 /* SetRootTransition.swift in Sources */,
 				8EBAABA027707A05003E4B08 /* HomeTabBarController.swift in Sources */,
+				8E19569D278EB63800651304 /* RefreshableViewController.swift in Sources */,
 				8ECA163D277096CA0051597C /* ProfileScreen.swift in Sources */,
 				8ECA163F277099F40051597C /* ChatScreen.swift in Sources */,
 				8E195683278DBA2700651304 /* PresentModalTransition.swift in Sources */,
+				8E19569B278DEE2000651304 /* ViewControllerContext+ScreenType.swift in Sources */,
 				8E195699278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift in Sources */,
 				8E195680278DB9DD00651304 /* ScreenTransitionProvider.swift in Sources */,
 				8ECA16512770CD730051597C /* AuthorizationCompletionResult.swift in Sources */,

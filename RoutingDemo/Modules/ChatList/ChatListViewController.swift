@@ -2,11 +2,13 @@ import UIKit
 
 final class ChatListViewController: UITableViewController {
 
+    private let roomID: Int
     private let router: ViewControllerContextRouterProtocol
 
     private var chatCount = Int.random(in: 3...10)
 
     init(roomID: Int, router: ViewControllerContextRouterProtocol) {
+        self.roomID = roomID
         self.router = router
 
         super.init(nibName: nil, bundle: nil)
@@ -56,5 +58,14 @@ extension ChatListViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         72.0
+    }
+}
+
+// MARK: - ViewControllerContextHolder
+
+extension ChatListViewController: ViewControllerContextHolder {
+
+    var currentContext: ViewControllerContext? {
+        ViewControllerContext(screenType: .chatList, info: roomID)
     }
 }

@@ -43,18 +43,31 @@ final class ViewControllerContextRouter: ViewControllerContextRouterProtocol {
     }
 
     func navigateToContext(_ context: ViewControllerContext, animated: Bool) {
-        let topViewController = self.topViewControllerProvider.topViewController
-        if let contextHolder = topViewController as? ViewControllerContextHolder, contextHolder.currentContext == context {
+        let topViewController = topViewControllerProvider.topViewController
+
+        if let contextHolder = topViewController as? ViewControllerContextHolder,
+           contextHolder.currentContext == context {
+            if let refreshable = topViewController as? RefreshableViewController {
+                refreshable.refresh()
+            }
             return
         }
-        if let switcher = self.contextSwitchers.first(where: { $0.canSwitch(to: context) }) {
+
+        if let switcher = contextSwitchers.first(where: { $0.canSwitch(to: context) }) {
             switcher.switchContext(to: context, animated: animated)
             return
         }
-        guard let viewController = self.viewControllersFactory.viewController(for: context) else { return }
-        let navigation = self.transitionProvider.navigation(for: context)
-        navigation.navigate(from: self.topViewControllerProvider.topViewController,
-                            to: viewController,
-                            animated: true)
+
+        guard let viewController = viewControllersFactory.viewController(for: context) else {
+            return
+        }
+
+        let navigation = transitionProvider.navigation(for: context)
+
+        navigation.navigate(
+            from: topViewControllerProvider.topViewController,
+            to: viewController,
+            animated: animated
+        )
     }
 }

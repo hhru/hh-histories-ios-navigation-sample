@@ -2,7 +2,11 @@ import UIKit
 
 final class ChatViewController: UIViewController {
 
-    let chatID: Int
+    private let chatID: Int
+
+    private var chatEmptyView: ChatEmptyView {
+        view as! ChatEmptyView
+    }
 
     init(chatID: Int) {
         self.chatID = chatID
@@ -25,5 +29,23 @@ final class ChatViewController: UIViewController {
         chatEmptyView.title = "Chat \(chatID)"
 
         view = chatEmptyView
+    }
+}
+
+// MARK: - ViewControllerContextHolder
+
+extension ChatViewController: ViewControllerContextHolder {
+
+    var currentContext: ViewControllerContext? {
+        ViewControllerContext(screenType: .chat, info: chatID)
+    }
+}
+
+// MARK: - RefreshableViewController
+
+extension ChatViewController: RefreshableViewController {
+
+    func refresh() {
+        chatEmptyView.subtitle = "You're up to date 🎉"
     }
 }
