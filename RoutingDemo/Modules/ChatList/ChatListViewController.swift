@@ -22,7 +22,7 @@ final class ChatListViewController: UITableViewController {
     }
 
     private func showChat(id: Int) {
-        router.navigateToScreen(.chat, with: id, animated: true)
+        router.navigateToScreen(.chat, with: ChatContextInfo(roomID: roomID, chatID: id), animated: true)
     }
 
     override func viewDidLoad() {

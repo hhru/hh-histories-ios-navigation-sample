@@ -2,11 +2,11 @@ import UIKit
 
 struct ChatScreen {
 
-    let chatID: Int
+    let contextInfo: ChatContextInfo
 
     func build() -> UIViewController {
         ChatViewController(
-            chatID: chatID
+            contextInfo: contextInfo
         )
     }
 }

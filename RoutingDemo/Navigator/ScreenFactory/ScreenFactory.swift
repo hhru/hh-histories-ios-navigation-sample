@@ -17,11 +17,11 @@ final class ScreenFactory: ViewControllersByContextFactory {
 
             return AuthorizationPhoneNumberScreen(authorizationCompletion: contextInfo.authorizationCompletion).build()
         case .chat:
-            guard let chatID = context.info as? Int else {
+            guard let info = context.info as? ChatContextInfo else {
                 return nil
             }
 
-            return ChatScreen(chatID: chatID).build()
+            return ChatScreen(contextInfo: info).build()
         case .chatList:
             guard let roomID = context.info as? Int else {
                 return nil

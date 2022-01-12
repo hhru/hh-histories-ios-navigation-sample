@@ -2,14 +2,14 @@ import UIKit
 
 final class ChatViewController: UIViewController {
 
-    private let chatID: Int
+    private let contextInfo: ChatContextInfo
 
     private var chatEmptyView: ChatEmptyView {
         view as! ChatEmptyView
     }
 
-    init(chatID: Int) {
-        self.chatID = chatID
+    init(contextInfo: ChatContextInfo) {
+        self.contextInfo = contextInfo
 
         super.init(nibName: nil, bundle: nil)
 
@@ -26,7 +26,7 @@ final class ChatViewController: UIViewController {
     override func loadView() {
         let chatEmptyView = ChatEmptyView()
 
-        chatEmptyView.title = "Chat \(chatID)"
+        chatEmptyView.title = "Chat \(contextInfo.chatID)"
 
         view = chatEmptyView
     }
@@ -37,7 +37,7 @@ final class ChatViewController: UIViewController {
 extension ChatViewController: ViewControllerContextHolder {
 
     var currentContext: ViewControllerContext? {
-        ViewControllerContext(screenType: .chat, info: chatID)
+        ViewControllerContext(screenType: .chat, info: contextInfo)
     }
 }
 

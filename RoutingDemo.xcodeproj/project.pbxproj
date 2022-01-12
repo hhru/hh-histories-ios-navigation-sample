@@ -31,6 +31,7 @@
 		8E195699278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E195697278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift */; };
 		8E19569B278DEE2000651304 /* ViewControllerContext+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19569A278DEE2000651304 /* ViewControllerContext+ScreenType.swift */; };
 		8E19569D278EB63800651304 /* RefreshableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19569C278EB63800651304 /* RefreshableViewController.swift */; };
+		8E19569F278EBEBE00651304 /* ChatContextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19569E278EBEBE00651304 /* ChatContextInfo.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -107,6 +108,7 @@
 		8E195697278DD22C00651304 /* UITabBarController+TopViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarController+TopViewControllerProvider.swift"; sourceTree = "<group>"; };
 		8E19569A278DEE2000651304 /* ViewControllerContext+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerContext+ScreenType.swift"; sourceTree = "<group>"; };
 		8E19569C278EB63800651304 /* RefreshableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableViewController.swift; sourceTree = "<group>"; };
+		8E19569E278EBEBE00651304 /* ChatContextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContextInfo.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -159,11 +161,12 @@
 		8E195663278D961E00651304 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				8E19567A278DB77300651304 /* Extensions */,
+				8E19567D278DB8DF00651304 /* ScreenFactory */,
 				8E195691278DC03E00651304 /* ScreenType */,
 				8E19568A278DBD3100651304 /* Switchers */,
 				8E195681278DBA1E00651304 /* Transitions */,
-				8E19567A278DB77300651304 /* Extensions */,
-				8E19567D278DB8DF00651304 /* ScreenFactory */,
+				8E19569C278EB63800651304 /* RefreshableViewController.swift */,
 				8E195668278D962A00651304 /* TopViewControllerProvider.swift */,
 				8E19566A278D962A00651304 /* ViewControllerContext.swift */,
 				8E195667278D962A00651304 /* ViewControllerContextHolder.swift */,
@@ -172,7 +175,6 @@
 				8E195665278D962900651304 /* ViewControllerContextTransition.swift */,
 				8E19566B278D962A00651304 /* ViewControllerContextTransitionProvider.swift */,
 				8E195669278D962A00651304 /* ViewControllersByContextFactory.swift */,
-				8E19569C278EB63800651304 /* RefreshableViewController.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 		8EBAAB9627707A05003E4B08 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				8E19569E278EBEBE00651304 /* ChatContextInfo.swift */,
 				8EBAAB9727707A05003E4B08 /* ChatEmptyView.swift */,
 				8ECA163E277099F40051597C /* ChatScreen.swift */,
 				8EBAAB9827707A05003E4B08 /* ChatViewController.swift */,
@@ -504,6 +507,7 @@
 				8E195687278DBBA200651304 /* SetRootTransition.swift in Sources */,
 				8EBAABA027707A05003E4B08 /* HomeTabBarController.swift in Sources */,
 				8E19569D278EB63800651304 /* RefreshableViewController.swift in Sources */,
+				8E19569F278EBEBE00651304 /* ChatContextInfo.swift in Sources */,
 				8ECA163D277096CA0051597C /* ProfileScreen.swift in Sources */,
 				8ECA163F277099F40051597C /* ChatScreen.swift in Sources */,
 				8E195683278DBA2700651304 /* PresentModalTransition.swift in Sources */,
