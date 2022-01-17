@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EA3CCA4279575D0004317CD /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA3CCA3279575D0004317CD /* Routes.swift */; };
 		8EBAAB70277079D1003E4B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */; };
 		8EBAAB89277079F2003E4B08 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB84277079F2003E4B08 /* Images.swift */; };
 		8EBAAB8A277079F2003E4B08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAAB85277079F2003E4B08 /* Colors.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8EA3CCA3279575D0004317CD /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		8EBAAB6C277079D1003E4B08 /* RoutingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBAAB6F277079D1003E4B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EBAAB84277079F2003E4B08 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8EBAAB86277079F2003E4B08 /* Reusable */,
 				8EBAAB85277079F2003E4B08 /* Colors.swift */,
 				8EBAAB84277079F2003E4B08 /* Images.swift */,
+				8EA3CCA3279575D0004317CD /* Routes.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				8EBAABA027707A05003E4B08 /* HomeTabBarController.swift in Sources */,
 				8ECA163D277096CA0051597C /* ProfileScreen.swift in Sources */,
 				8ECA163F277099F40051597C /* ChatScreen.swift in Sources */,
+				8EA3CCA4279575D0004317CD /* Routes.swift in Sources */,
 				8ECA16512770CD730051597C /* AuthorizationCompletionResult.swift in Sources */,
 				8ECA16582770CF190051597C /* AuthorizationProvider.swift in Sources */,
 				8ECA16552770CE7D0051597C /* AuthorizationPhoneNumberScreen.swift in Sources */,

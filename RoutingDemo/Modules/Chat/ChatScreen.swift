@@ -3,10 +3,11 @@ import Nivelir
 
 struct ChatScreen: Screen {
 
+    let roomID: Int
     let chatID: Int
 
     var traits: Set<AnyHashable> {
-        [chatID]
+        [roomID, chatID]
     }
 
     func build(navigator: ScreenNavigator) -> UIViewController {

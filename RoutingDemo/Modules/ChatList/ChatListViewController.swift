@@ -4,11 +4,13 @@ import Nivelir
 final class ChatListViewController: UITableViewController, ScreenKeyedContainer {
 
     private var chatCount = Int.random(in: 3...10)
+    private let roomID: Int
 
     let screenKey: ScreenKey
     let screenNavigator: ScreenNavigator
 
     init(roomID: Int, screenKey: ScreenKey, screenNavigator: ScreenNavigator) {
+        self.roomID = roomID
         self.screenKey = screenKey
         self.screenNavigator = screenNavigator
 
@@ -23,9 +25,13 @@ final class ChatListViewController: UITableViewController, ScreenKeyedContainer 
     }
 
     private func showChat(id: Int) {
+        // using local routing
         screenNavigator.navigate(from: stack) { route in
-            route.push(ChatScreen(chatID: id))
+            route.push(ChatScreen(roomID: roomID, chatID: id))
         }
+
+        // using with reusable routes
+        // screenNavigator.navigate(to: Routes.chatRoute(roomID: roomID, chatID: id))
     }
 
     override func viewDidLoad() {
