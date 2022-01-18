@@ -23,12 +23,28 @@ final class ChatListViewController: UITableViewController {
     }
 
     private func showChat(id: Int) {
+        // test local routing
+
+        let chatScreenStep = StepAssembly(finder: NilFinder(), factory: ChatScreen())
+            .using(UINavigationController.push())
+            .from(GeneralStep.custom(using: InstanceFinder(instance: self)).expectingContainer())
+            .assemble()
+
         try? router.navigate(
-            to: Screens.chatScreen(router: router),
+            to: chatScreenStep,
             with: ChatContext(roomID: roomID, chatID: id),
             animated: true,
             completion: nil
         )
+
+        // or using global routing
+
+//        try? router.navigate(
+//            to: Screens.chatScreen(router: router),
+//            with: ChatContext(roomID: roomID, chatID: id),
+//            animated: true,
+//            completion: nil
+//        )
     }
 
     override func viewDidLoad() {
