@@ -10,23 +10,24 @@ final class MainSceneRouter {
         self.authorizationProvider = authorizationProvider
     }
 
+    private func navigatoToChat(roomID: Int, chatID: Int) {
+        router.navigateToScreen(.roomList, animated: true)
+        router.navigateToScreen(.chat, with: ChatContextInfo(roomID: roomID, chatID: chatID), animated: true)
+    }
+
     func showRootScreen() {
         router.navigateToScreen(.home, animated: false)
     }
 
     func showChat(roomID: Int, chatID: Int) {
         if authorizationProvider.isAuthorized {
-            router.navigateToScreen(.chat, with: ChatContextInfo(roomID: roomID, chatID: chatID), animated: true)
+            navigatoToChat(roomID: roomID, chatID: chatID)
         } else {
             router.navigateToScreen(
                 .authorization,
                 with: AuthorizationPhoneNumberContextInfo(authorizationCompletion: { [unowned self] result in
                     if result.isAuthorized {
-                        self.router.navigateToScreen(
-                            .chat,
-                            with: ChatContextInfo(roomID: roomID, chatID: chatID),
-                            animated: true
-                        )
+                        self.navigatoToChat(roomID: roomID, chatID: chatID)
                     }
                 }),
                 animated: true
