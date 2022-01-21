@@ -16,10 +16,10 @@
 1. Выполнить команду в папке с проектом
 
    ```bash
-   make dependencies-update
+   pod install
    ```
 
-2. Открыть `RoutingDemo.xcodeproj` и собрать проект
+2. Открыть `RoutingDemo.xcworkspace` и собрать проект
 
 ##  Тестирование push-уведомлений
 
